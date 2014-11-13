@@ -1,0 +1,16 @@
+{
+  "name": "node-mapnik_issue-346",
+  "description": "Test case for issue 346 for node-mapnikk",
+  "author": "Steven Looman <steven.looman@gmail.com>",
+  "version": "0.0.1",
+  "dependencies": {
+    "sphericalmercator": "~1.0.2",
+    "mapnik": "~3.1.0"
+  },
+  "engines": {
+    "node": "~0.10.0"
+  },
+  "scripts": {
+    "start": "node bug_346.js"
+  }
+}

@@ -1,0 +1,151 @@
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#c4dff6" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
+
+<Style name="roads_high" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([stylegroup] = 'noauto')</Filter>
+    <LineSymbolizer stroke-width="3.5" stroke-dasharray="3, 3" stroke-linejoin="round" stroke="#ffffff"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([stylegroup] = 'minorroad')</Filter>
+    <LineSymbolizer stroke-width="14" stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <LineSymbolizer stroke="#ffffff"/>
+  </Rule>
+</Style>
+<Style name="roads_high-outline" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([stylegroup] = 'noauto') and ([bridge] = 1)</Filter>
+    <LineSymbolizer stroke-width="9.5" stroke="#b5b5a6" stroke-linecap="butt" stroke-linejoin="round"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([stylegroup] = 'noauto')</Filter>
+    <LineSymbolizer stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round" stroke="#e3e2d0"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([stylegroup] = 'minorroad') and ([bridge] = 1)</Filter>
+    <LineSymbolizer stroke-width="17.5" stroke="#b5b5a6" stroke-linecap="butt" stroke-linejoin="round"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([stylegroup] = 'minorroad')</Filter>
+    <LineSymbolizer stroke-width="17.5" stroke-linecap="round" stroke-linejoin="round" stroke="#e3e2d0"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([bridge] = 1)</Filter>
+    <LineSymbolizer stroke="#b5b5a6" stroke-linecap="butt" stroke-linejoin="round"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <LineSymbolizer stroke-linecap="round" stroke-linejoin="round" stroke="#e3e2d0"/>
+  </Rule>
+</Style>
+<Layer name="roads_high" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>roads_high-outline</StyleName>
+    <StyleName>roads_high</StyleName>
+    <Datasource>
+       <Parameter name="id">roads_high</Parameter>
+       <Parameter name="project">osm-bright</Parameter>
+       <Parameter name="srs">+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over</Parameter>
+       <Parameter name="extent">333089,6576755,804891,7173540</Parameter>
+       <Parameter name="table">layer_roads_high</Parameter>
+       <Parameter name="key_field">rowid</Parameter>
+       <Parameter name="geometry_field">geometry</Parameter>
+       <Parameter name="type">sqlite</Parameter>
+       <Parameter name="file">bug_346.sqlite</Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="bridge" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '2_line') and ([stylegroup] = 'noauto')</Filter>
+    <LineSymbolizer stroke-width="6.5" stroke="#fcfbe7" stroke-linejoin="round"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '3_inline') and ([stylegroup] = 'noauto')</Filter>
+    <LineSymbolizer stroke-width="3.5" stroke-dasharray="3, 3" stroke-linejoin="round" stroke="#ffffff"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '3_inline') and ([stylegroup] = 'minorroad')</Filter>
+    <LineSymbolizer stroke-width="14" stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '1_outline') and ([stylegroup] = 'noauto') and ([bridge] = 1)</Filter>
+    <LineSymbolizer stroke-width="9.5" stroke="#b5b5a6" stroke-linecap="butt" stroke-linejoin="round"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '1_outline') and ([stylegroup] = 'noauto')</Filter>
+    <LineSymbolizer stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round" stroke="#e3e2d0"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '1_outline') and ([stylegroup] = 'minorroad') and ([bridge] = 1)</Filter>
+    <LineSymbolizer stroke-width="17.5" stroke="#b5b5a6" stroke-linecap="butt" stroke-linejoin="round"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '1_outline') and ([stylegroup] = 'minorroad')</Filter>
+    <LineSymbolizer stroke-width="17.5" stroke-linecap="round" stroke-linejoin="round" stroke="#e3e2d0"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '3_inline')</Filter>
+    <LineSymbolizer stroke="#ffffff"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '1_outline') and ([bridge] = 1)</Filter>
+    <LineSymbolizer stroke="#b5b5a6" stroke-linecap="butt" stroke-linejoin="round"/>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>500</MinScaleDenominator>
+    <Filter>([render] = '1_outline')</Filter>
+    <LineSymbolizer stroke-linecap="round" stroke-linejoin="round" stroke="#e3e2d0"/>
+  </Rule>
+</Style>
+<Layer name="bridge" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>bridge</StyleName>
+    <Datasource>
+       <Parameter name="id">bridge</Parameter>
+       <Parameter name="project">osm-bright-imposm</Parameter>
+       <Parameter name="table">layer_bridge</Parameter>
+       <Parameter name="srs">+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over</Parameter>
+       <Parameter name="extent">333089,6576755,804891,7173540</Parameter>
+       <Parameter name="key_field">rowid</Parameter>
+       <Parameter name="type">sqlite</Parameter>
+       <Parameter name="file">bug_346.sqlite</Parameter>
+    </Datasource>
+  </Layer>
+
+</Map>
