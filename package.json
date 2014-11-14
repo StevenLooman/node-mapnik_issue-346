@@ -3,6 +3,7 @@
   "description": "Test case for issue 346 for node-mapnikk",
   "author": "Steven Looman <steven.looman@gmail.com>",
   "version": "0.0.1",
+  "private": true,
   "dependencies": {
     "sphericalmercator": "~1.0.2",
     "mapnik": "~3.1.0"
