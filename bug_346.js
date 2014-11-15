@@ -6,6 +6,7 @@ mapnik.register_default_fonts();
 mapnik.register_default_input_plugins();
 var map = new mapnik.Map(256, 256);
 map.loadSync('bug_346.xml');
+mapnik.Logger.setSeverity(mapnik.Logger.DEBUG);
 
 
 var zoom = 19;
@@ -19,9 +20,13 @@ map.zoomToBox(mercator.bbox(x, y, zoom, false, '900913'));
 
 
 function renderVTileRTile(err, callback) {
+    if (err) throw err;
+
+    console.log('rendering VTile');
     map.render(vTile, function(err, vTile) {
         if (err) throw err;
 
+        console.log('rendering RTileVTile');
         vTile.render(map, rTile, function(err, rTile) {
             if (err) throw err;
 
@@ -33,6 +38,8 @@ function renderVTileRTile(err, callback) {
 }
 
 function renderRTile(err, callback) {
+    console.log('rendering RTile');
+
     if (err) throw err;
 
     map.render(rTile, function(err, rTile) {
